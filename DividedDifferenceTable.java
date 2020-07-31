@@ -1,11 +1,15 @@
 public class DividedDifferenceTable{
 
-    public double[][] table;
+    private double[][] table;
 
     public DividedDifferenceTable(double[][] givenValues){
         this.initializeTable(givenValues);
 
         this.fillTable();
+    }
+
+    public double[][] getTable(){
+        return this.table;
     }
 
     private void initializeTable(double[][] givenValues){
@@ -57,40 +61,6 @@ public class DividedDifferenceTable{
             }
             System.out.println();
         }
-        
-        // int rowCount = (table[0].length << 1) - 1;
-
-        // for(int row = 0; row < rowCount; row++){
-
-        //     if(row % 2 == 0){
-        //         System.out.print(table[0][row >> 1]+"\t"+table[1][row >> 1]+"\t");
-        //     }else{
-        //         System.out.print("\t\t");
-        //     }
-
-        //     for(int col = 2; col <= row+1 && col < ; col++){
-
-        //         if(row % 2 != 0){
-        //             if(col % 2 == 0){
-        //                 System.out.print(table[col][row >> 1]+"\t");
-        //             }
-        //         }else if(col % 2 != 0){
-        //             System.out.print(table[col][row >> 1]+"\t");
-        //         }
-
-
-        //         //System.out.print("["+row+"]["+col+"]"+"\t");
-        //     }
-        //     System.out.println();
-        // }
-
-        // System.out.printf(table[0][0]+"\t"+table[1][0]+"\n");
-        // System.out.printf("\t\t"+table[2][0]+"\n");
-        // System.out.printf(table[0][1]+"\t"+table[1][1]+"\t\t"+table[3][0]+"\n");
-        // System.out.printf("\t\t"+table[2][1]+"\t\t"+table[4][0]+"\n");
-        // System.out.printf(table[0][2]+"\t"+table[1][2]+"\t\t"+table[3][1]+"\n");
-        // System.out.printf("\t\t"+table[2][2]+"\n");
-        // System.out.printf(table[0][3]+"\t"+table[1][3]+"\n");
 
     }
 

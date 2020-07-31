@@ -8,9 +8,11 @@ public class Main {
 
         double[][] givenValues = new double[][]{{1, 3}, {3./2, 13./4}, {0, 3}, {2, 5./3}};
 
-        DividedDifferenceTable polynomial = new DividedDifferenceTable(givenValues);
+        Polynomial polynomial = new Polynomial(givenValues);
 
-        polynomial.printTable();
+        polynomial.printDividedDifferenceTable();
+
+        System.out.println(polynomial.getUnsimplifiedPolynomial());
 
     }
 }
