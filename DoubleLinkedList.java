@@ -3,6 +3,8 @@ public class DoubleLinkedList {
     protected Node head;
     protected Node tail;
 
+    protected int size;
+
     public Node getLast(){
         return this.tail;
     }
@@ -12,6 +14,8 @@ public class DoubleLinkedList {
     }
 
     public void addFirst(Double data){
+
+        this.size++;
 
         Node node = new Node(data);
 
@@ -26,6 +30,8 @@ public class DoubleLinkedList {
     }
 
     public void addLast(Double data){
+
+        this.size++;
 
         Node node = new Node(data);
 
@@ -45,6 +51,27 @@ public class DoubleLinkedList {
         while(node != null){
             System.out.print(node.data + " ");
             node = node.next;
+        }
+    }
+
+    public void multiply(double n){
+        Node node = this.head;
+
+        while(node != null){
+            node.data *= n;
+            node = node.next;
+        }
+    }
+
+    public void add(DoubleLinkedList list, double n){
+        Node otherTail = list.getLast();
+        Node node = this.tail;
+
+        while(node != null && otherTail != null){
+            node.data = node.data + n * otherTail.data;
+
+            node = node.previous;
+            otherTail = otherTail.previous;
         }
     }
 
