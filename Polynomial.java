@@ -1,4 +1,7 @@
 import java.text.DecimalFormat;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Polynomial {
     
@@ -36,7 +39,7 @@ public class Polynomial {
             
             xTerms.append("(x");
             if(t[0][col-1] != 0){
-                xTerms.append(decFormat.format(t[0][col-1]));
+                xTerms.append(decFormat.format(-t[0][col-1]));
             }
             xTerms.append(")");
 
@@ -47,6 +50,35 @@ public class Polynomial {
         this.unsimpPoly = builder.toString().substring(1);
 
         return this.unsimpPoly;
+
+    }
+
+    public String getSimplifiedPolynomial(){
+
+        DoubleLinkedList coefficients = new DoubleLinkedList();
+
+        coefficients.addLast(1.);
+        coefficients.addLast(-t[0][0]);
+
+        for(int col = 1; col < t[col].length; col++){
+            double next = -t[0][col];
+
+            coefficients.addLast(0.);
+
+            Node node = coefficients.getLast();
+
+            while(node.previous != null){
+                double current = node.previous.data;
+                node.data = current * next + node.data;
+
+                node = node.previous;
+            }
+
+        }
+
+        coefficients.print();
+
+        return "";
 
     }
 

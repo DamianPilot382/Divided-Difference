@@ -14,5 +14,7 @@ public class Main {
 
         System.out.println(polynomial.getUnsimplifiedPolynomial());
 
+        System.out.println(polynomial.getSimplifiedPolynomial());
+
     }
 }
