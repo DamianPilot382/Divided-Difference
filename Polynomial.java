@@ -1,7 +1,4 @@
 import java.text.DecimalFormat;
-import java.util.Deque;
-import java.util.Iterator;
-import java.util.LinkedList;
 
 public class Polynomial {
     
@@ -89,10 +86,6 @@ public class Polynomial {
 
         coefficients.getLast().data = t[1][0];
         sum.getLast().data = t[1][0];
-
-        sum.print();
-
-        System.out.println(sum.size);
 
         Node node = sum.getFirst();
 
